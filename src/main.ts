@@ -1,7 +1,7 @@
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as ecs from '@aws-cdk/aws-ecs';
+import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
 import * as iam from '@aws-cdk/aws-iam';
-// import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
 // import * as sns from '@aws-cdk/aws-sns';
 import * as cdk from '@aws-cdk/core';
 import { CodePipeline, ShellStep, CodePipelineSource } from '@aws-cdk/pipelines';
@@ -14,10 +14,10 @@ const envJP = {
   account: process.env.CDK_DEFAULT_ACCOUNT,
 };
 
-// const envUS = {
-//   region: 'us-east-1',
-//   account: process.env.CDK_DEFAULT_ACCOUNT,
-// };
+const envUS = {
+  region: 'us-east-1',
+  account: process.env.CDK_DEFAULT_ACCOUNT,
+};
 
 export class TinyDemoStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
@@ -25,23 +25,23 @@ export class TinyDemoStack extends cdk.Stack {
 
     // new sns.Topic(this, 'Topic');
 
-    // const vpc = ec2.Vpc.fromLookup(this, 'Vpc', { isDefault: true });
-    const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 3, natGateways: 1 });
-    new ecs.Cluster(this, 'Cluster', { vpc });
-    // const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
-    //   cpu: 256,
-    //   memoryLimitMiB: 512,
-    // });
-    // taskDefinition.addContainer('nginx', {
-    //   image: ecs.ContainerImage.fromRegistry('nginx:latest'),
-    //   portMappings: [
-    //     { containerPort: 80 },
-    //   ],
-    // });
-    // new ecspatterns.ApplicationLoadBalancedFargateService(this, 'Service', {
-    //   taskDefinition,
-    //   cluster,
-    // });
+    const vpc = ec2.Vpc.fromLookup(this, 'Vpc', { isDefault: true });
+    // const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 3, natGateways: 1 });
+    const cluster = new ecs.Cluster(this, 'Cluster', { vpc });
+    const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
+      cpu: 256,
+      memoryLimitMiB: 512,
+    });
+    taskDefinition.addContainer('nginx', {
+      image: ecs.ContainerImage.fromRegistry('nginx:latest'),
+      portMappings: [
+        { containerPort: 80 },
+      ],
+    });
+    new ecspatterns.ApplicationLoadBalancedFargateService(this, 'Service', {
+      taskDefinition,
+      cluster,
+    });
   }
 }
 
@@ -51,7 +51,7 @@ export class MyAppStage extends cdk.Stage {
     super(scope, id, props);
 
     new TinyDemoStack(this, 'TinyDemoStackJP', { env: envJP });
-    // new TinyDemoStack(this, 'TinyDemoStackUS', { env: envUS });
+    new TinyDemoStack(this, 'TinyDemoStackUS', { env: envUS });
   }
 }
 
