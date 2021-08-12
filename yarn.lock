@@ -302,27 +302,6 @@
     "@aws-cdk/core" "1.118.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-ecs-patterns@^1.95.2":
-  version "1.118.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ecs-patterns/-/aws-ecs-patterns-1.118.0.tgz#5368dba05249ecdaca2bcca6a3f0c227483032e6"
-  integrity sha512-FCXY9Y07rmlL1v4+3V2eecAubb5y78S0FUgHMWce8JLo4TdAQ3QYOxUbjyT0VCniBeQdYCPbszXQD/OHqFRmPg==
-  dependencies:
-    "@aws-cdk/aws-applicationautoscaling" "1.118.0"
-    "@aws-cdk/aws-certificatemanager" "1.118.0"
-    "@aws-cdk/aws-ec2" "1.118.0"
-    "@aws-cdk/aws-ecs" "1.118.0"
-    "@aws-cdk/aws-elasticloadbalancingv2" "1.118.0"
-    "@aws-cdk/aws-events" "1.118.0"
-    "@aws-cdk/aws-events-targets" "1.118.0"
-    "@aws-cdk/aws-iam" "1.118.0"
-    "@aws-cdk/aws-route53" "1.118.0"
-    "@aws-cdk/aws-route53-targets" "1.118.0"
-    "@aws-cdk/aws-servicediscovery" "1.118.0"
-    "@aws-cdk/aws-sqs" "1.118.0"
-    "@aws-cdk/core" "1.118.0"
-    "@aws-cdk/cx-api" "1.118.0"
-    constructs "^3.3.69"
-
 "@aws-cdk/aws-ecs@1.118.0", "@aws-cdk/aws-ecs@^1.95.2":
   version "1.118.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ecs/-/aws-ecs-1.118.0.tgz#aa0a231e79d966710f8541e6483a669c166f1811"
@@ -651,7 +630,7 @@
     "@aws-cdk/core" "1.118.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-sns@1.118.0", "@aws-cdk/aws-sns@^1.95.2":
+"@aws-cdk/aws-sns@1.118.0":
   version "1.118.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-sns/-/aws-sns-1.118.0.tgz#0a15a6f7669e31a6a90c243a758acd1fa20c2ebe"
   integrity sha512-wKSgTqMltWJo7DSsDIiCAvNyOLN28vn/BqG6e+mFcHGZapduUb1pjqvMwH9LOs+Lj9NcWsRSn+bjYEV1+cN3Zg==
