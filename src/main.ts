@@ -34,7 +34,7 @@ export class MyPipelineStack extends cdk.Stack {
         rolePolicy: [
           new iam.PolicyStatement({
             actions: ['sts:AssumeRole'],
-            resources: ['*'],
+            resources: ['arn:aws:iam::*:role/cdk-hnb659fds-lookup-role-*'],
           }),
         ],
       },
