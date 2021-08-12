@@ -1,4 +1,4 @@
-// import * as iam from '@aws-cdk/aws-iam';
+import * as iam from '@aws-cdk/aws-iam';
 import * as cdk from '@aws-cdk/core';
 import { CodePipeline, ShellStep, CodePipelineSource } from '@aws-cdk/pipelines';
 import { TinyDemoStack } from './service';
@@ -30,14 +30,14 @@ export class MyPipelineStack extends cdk.Stack {
     super(scope, id, props);
 
     const pl = new CodePipeline(this, 'Pipeline', {
-      // codeBuildDefaults: {
-      //   rolePolicy: [
-      //     new iam.PolicyStatement({
-      //       actions: ['sts:AssumeRole'],
-      //       resources: ['*'],
-      //     }),
-      //   ],
-      // },
+      codeBuildDefaults: {
+        rolePolicy: [
+          new iam.PolicyStatement({
+            actions: ['sts:AssumeRole'],
+            resources: ['*'],
+          }),
+        ],
+      },
       synth: new ShellStep('Synth', {
         // Use a connection created using the AWS console to authenticate to GitHub
         // Other sources are available.
