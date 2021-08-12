@@ -99,6 +99,11 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-iam",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-sns",
       "version": "^1.95.2",
       "type": "runtime"

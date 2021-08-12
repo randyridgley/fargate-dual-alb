@@ -1,5 +1,6 @@
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as ecs from '@aws-cdk/aws-ecs';
+import * as iam from '@aws-cdk/aws-iam';
 // import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
 // import * as sns from '@aws-cdk/aws-sns';
 import * as cdk from '@aws-cdk/core';
@@ -59,6 +60,14 @@ export class MyPipelineStack extends cdk.Stack {
     super(scope, id, props);
 
     const pl = new CodePipeline(this, 'Pipeline', {
+      codeBuildDefaults: {
+        rolePolicy: [
+          new iam.PolicyStatement({
+            actions: ['sts:AssumeRole'],
+            resources: ['*'],
+          }),
+        ],
+      },
       synth: new ShellStep('Synth', {
         // Use a connection created using the AWS console to authenticate to GitHub
         // Other sources are available.
@@ -72,6 +81,7 @@ export class MyPipelineStack extends cdk.Stack {
         ],
       }),
     });
+
 
     // create the deployment stage
     pl.addStage(new MyAppStage(this, 'MultiRegionDeployment'));
