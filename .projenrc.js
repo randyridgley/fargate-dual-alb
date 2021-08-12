@@ -13,6 +13,9 @@ const project = new AwsCdkTypeScriptApp({
   deps: [
     'cdk-fargate-patterns',
   ],
+  context: {
+    '@aws-cdk/core:newStyleStackSynthesis': 'true',
+  },
 
 });
 
