@@ -89,6 +89,11 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-ecs",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-iam",
       "version": "^1.95.2",
       "type": "runtime"
