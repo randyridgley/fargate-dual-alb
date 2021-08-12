@@ -24,8 +24,8 @@ export class TinyDemoStack extends cdk.Stack {
 
     // new sns.Topic(this, 'Topic');
 
-    const vpc = ec2.Vpc.fromLookup(this, 'Vpc', { isDefault: true });
-    // const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 3, natGateways: 1 });
+    // const vpc = ec2.Vpc.fromLookup(this, 'Vpc', { isDefault: true });
+    const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 3, natGateways: 1 });
     new ecs.Cluster(this, 'Cluster', { vpc });
     // const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
     //   cpu: 256,
