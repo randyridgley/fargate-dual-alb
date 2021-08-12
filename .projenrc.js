@@ -6,6 +6,7 @@ const project = new AwsCdkTypeScriptApp({
   description: 'Demo application with cdk-fargate-patterns',
   cdkDependencies: [
     '@aws-cdk/aws-ecs',
+    '@aws-cdk/aws-sns',
     '@aws-cdk/aws-certificatemanager',
     '@aws-cdk/pipelines',
   ],

@@ -1,6 +1,7 @@
+import * as sns from '@aws-cdk/aws-sns';
 import * as cdk from '@aws-cdk/core';
 import { CodePipeline, ShellStep, CodePipelineSource } from '@aws-cdk/pipelines';
-import { TinyDemoStack } from './service';
+// import { TinyDemoStack } from './service';
 
 const app = new cdk.App();
 
@@ -13,6 +14,15 @@ const envUS = {
   region: 'us-east-1',
   account: process.env.CDK_DEFAULT_ACCOUNT,
 };
+
+export class TinyDemoStack extends cdk.Stack {
+  constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
+    super(scope, id, props);
+
+    new sns.Topic(this, 'Topic');
+
+  }
+}
 
 // the application stage which deploy the demo stack to multiple environments in parallel
 export class MyAppStage extends cdk.Stage {
