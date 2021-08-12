@@ -47,7 +47,7 @@ export class MyAppStage extends cdk.Stage {
     super(scope, id, props);
 
     new TinyDemoStack(this, 'TinyDemoStackJP', { env: envJP });
-    new TinyDemoStack(this, 'TinyDemoStackUS', { env: envUS });
+    // new TinyDemoStack(this, 'TinyDemoStackUS', { env: envUS });
   }
 }
 
