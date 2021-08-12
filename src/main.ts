@@ -22,7 +22,7 @@ export class TinyDemoStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
 
-    const vpc = ec2.Vpc.fromLookup('this', 'Vpc', { isDefault: true });
+    const vpc = ec2.Vpc.fromLookup(this, 'Vpc', { isDefault: true });
     const cluster = new ecs.Cluster(this, 'Cluster', { vpc });
     const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
       cpu: 256,
