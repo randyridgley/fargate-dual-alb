@@ -7,6 +7,7 @@ const project = new AwsCdkTypeScriptApp({
   cdkDependencies: [
     '@aws-cdk/aws-ec2',
     '@aws-cdk/aws-ecs',
+    '@aws-cdk/aws-sns',
     '@aws-cdk/aws-ecs-patterns',
     '@aws-cdk/aws-certificatemanager',
     '@aws-cdk/pipelines',

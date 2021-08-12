@@ -1,7 +1,7 @@
-// import * as sns from '@aws-cdk/aws-sns';
-import * as ec2 from '@aws-cdk/aws-ec2';
-import * as ecs from '@aws-cdk/aws-ecs';
-import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
+// import * as ec2 from '@aws-cdk/aws-ec2';
+// import * as ecs from '@aws-cdk/aws-ecs';
+// import * as ecspatterns from '@aws-cdk/aws-ecs-patterns';
+import * as sns from '@aws-cdk/aws-sns';
 import * as cdk from '@aws-cdk/core';
 import { CodePipeline, ShellStep, CodePipelineSource } from '@aws-cdk/pipelines';
 // import { TinyDemoStack } from './service';
@@ -22,23 +22,25 @@ export class TinyDemoStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
 
+    new sns.Topic(this, 'Topic');
+
     // const vpc = ec2.Vpc.fromLookup(this, 'Vpc', { isDefault: true });
-    const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 3, natGateways: 1 });
-    const cluster = new ecs.Cluster(this, 'Cluster', { vpc });
-    const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
-      cpu: 256,
-      memoryLimitMiB: 512,
-    });
-    taskDefinition.addContainer('nginx', {
-      image: ecs.ContainerImage.fromRegistry('nginx:latest'),
-      portMappings: [
-        { containerPort: 80 },
-      ],
-    });
-    new ecspatterns.ApplicationLoadBalancedFargateService(this, 'Service', {
-      taskDefinition,
-      cluster,
-    });
+    // const vpc = new ec2.Vpc(this, 'Vpc', { maxAzs: 3, natGateways: 1 });
+    // const cluster = new ecs.Cluster(this, 'Cluster', { vpc });
+    // const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
+    //   cpu: 256,
+    //   memoryLimitMiB: 512,
+    // });
+    // taskDefinition.addContainer('nginx', {
+    //   image: ecs.ContainerImage.fromRegistry('nginx:latest'),
+    //   portMappings: [
+    //     { containerPort: 80 },
+    //   ],
+    // });
+    // new ecspatterns.ApplicationLoadBalancedFargateService(this, 'Service', {
+    //   taskDefinition,
+    //   cluster,
+    // });
   }
 }
 
