@@ -13,10 +13,10 @@ const envJP = {
   account: process.env.CDK_DEFAULT_ACCOUNT,
 };
 
-const envUS = {
-  region: 'us-east-1',
-  account: process.env.CDK_DEFAULT_ACCOUNT,
-};
+// const envUS = {
+//   region: 'us-east-1',
+//   account: process.env.CDK_DEFAULT_ACCOUNT,
+// };
 
 export class TinyDemoStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
