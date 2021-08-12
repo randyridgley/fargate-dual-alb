@@ -1,5 +1,6 @@
 {
   "name": "fargate-dual-alb",
+  "description": "Demo application with cdk-fargate-patterns",
   "scripts": {
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
@@ -39,7 +40,11 @@
   },
   "dependencies": {
     "@aws-cdk/assert": "^1.95.2",
-    "@aws-cdk/core": "^1.95.2"
+    "@aws-cdk/aws-certificatemanager": "^1.95.2",
+    "@aws-cdk/aws-ecs": "^1.95.2",
+    "@aws-cdk/core": "^1.95.2",
+    "@aws-cdk/pipelines": "^1.95.2",
+    "cdk-fargate-patterns": "^0.3.24"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",

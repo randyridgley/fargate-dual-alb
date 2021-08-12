@@ -79,8 +79,27 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-certificatemanager",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/core",
       "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/pipelines",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "cdk-fargate-patterns",
       "type": "runtime"
     }
   ],
