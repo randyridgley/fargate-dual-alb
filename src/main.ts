@@ -24,7 +24,7 @@ export class MyAppStage extends cdk.Stage {
   }
 }
 
-class MyPipelineStack extends cdk.Stack {
+export class MyPipelineStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -36,8 +36,8 @@ class MyPipelineStack extends cdk.Stack {
           connectionArn: 'arn:aws:codestar-connections:ap-northeast-1:903779448426:connection/5cb485a5-1bbe-4d7d-be7c-5dab16081bfa', // Created using the AWS console * });',
         }),
         commands: [
-          'npm ci',
-          'npm run build',
+          'yarn install',
+          'yarn build',
           'npx cdk synth',
         ],
       }),
