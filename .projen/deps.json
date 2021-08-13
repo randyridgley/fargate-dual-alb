@@ -84,6 +84,11 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-codebuild",
+      "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-ec2",
       "version": "^1.95.2",
       "type": "runtime"
