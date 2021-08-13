@@ -12,6 +12,7 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-ec2',
     '@aws-cdk/aws-ecs',
     '@aws-cdk/aws-iam',
+    '@aws-cdk/aws-logs',
     '@aws-cdk/aws-certificatemanager',
     '@aws-cdk/pipelines',
   ],
