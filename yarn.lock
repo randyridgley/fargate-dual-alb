@@ -141,7 +141,7 @@
     "@aws-cdk/core" "1.118.0"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-codebuild@1.118.0":
+"@aws-cdk/aws-codebuild@1.118.0", "@aws-cdk/aws-codebuild@^1.95.2":
   version "1.118.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codebuild/-/aws-codebuild-1.118.0.tgz#c13483a43c9a84ef88d56d244ea8ed1c4a92ccb2"
   integrity sha512-UWM+jg5TBx4Iv/pGmsPvCj7k3H5iRrfxydqzIt/wIqjKPLGgEcpMWySCZOst8P4T2rfM7wORqJV016CNybsHRA==
