@@ -22,6 +22,7 @@ const project = new AwsCdkTypeScriptApp({
   context: {
     '@aws-cdk/core:newStyleStackSynthesis': 'true',
   },
+  buildWorkflow: false,
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     ignoreProjen: false,
     workflowOptions: {
