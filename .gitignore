@@ -34,7 +34,6 @@ jspm_packages/
 /test-reports/
 junit.xml
 /coverage/
-!/.github/workflows/upgrade.yml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.json
@@ -53,3 +52,4 @@ cdk.out
 cdk.context.json
 yarn-error.log
 dependabot.yml
+!/.github/workflows/upgrade.yml

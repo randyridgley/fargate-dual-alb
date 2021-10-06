@@ -41,7 +41,6 @@ const project = new AwsCdkTypeScriptApp({
 });
 
 
-
 const gitpodPrebuild = project.addTask('gitpod:prebuild', {
   description: 'Prebuild setup for Gitpod',
 });
