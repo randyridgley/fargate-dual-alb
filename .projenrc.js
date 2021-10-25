@@ -5,6 +5,7 @@ const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
 const project = new AwsCdkTypeScriptApp({
   cdkVersion: '1.95.2',
+  minNodeVersion: '12.20.0',
   defaultReleaseBranch: 'main',
   name: 'fargate-dual-alb',
   description: 'Demo application with cdk-fargate-patterns',
